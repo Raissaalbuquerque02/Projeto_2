@@ -1,31 +1,35 @@
-
-
-  * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(#81D4FA 0%, #F48FB1 100%);
-  background-image: url("code.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(#d9c3ff 0%, #a87fd8 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  color: #222;
-  text-align: center;
-  padding: 20px;
+  color: #333;
 }
 
-body::before {
+/* NOVA CLASSE - Fundo exclusivo do jogo */
+.fundo-jogo {
+  background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+  background-image: url("code.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+}
+
+/* Pseudo-elemento para o ruído e bg */
+.fundo-jogo::before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-image: url("bg.png");
@@ -37,60 +41,74 @@ body::before {
 }
 
 .container {
-  width: 100%;
-  max-width: 500px;
-  padding: 1.5rem;
+  width: 80%;
+  max-width: 1000px;
+  min-height: 60%;
+  padding: 2rem;
   border-radius: 20px;
-  border: 2px solid #81D4FA;
-  box-shadow: 4px 4px 20px rgba(0,0,0,0.15);
-  background: white;
-  text-align: center;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 50px;
   margin-bottom: 1rem;
-  color: #ebe3ed;
+  color: #6c3483;
+  text-align: center;
 }
 
 h2 {
-  font-size: 1.4em;
+  font-size: 28px;
   margin-bottom: 1rem;
-  color: #0D47A1;
+  color: #884ea0;
 }
 
-p,
-label {
-  font-size: 1em;
-  margin: 10px 0;
+p, label {
+  font-size: 18px;
+  margin: 8px 0;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
+  display: inline-block;
+  background-color: #f8f8f8;
   padding: 20px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 400px;
+  border-radius: 15px;
 }
 
 label {
   display: block;
   margin-top: 10px;
-  text-align: left;
-  width: 100%;
 }
 
 input[type="text"],
 input[type="number"] {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin: 10px 0;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
+}
+
+button {
+  margin: 8px 4px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #884ea0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6c3483;
+}
+
+button:disabled {
+  background-color: #bfaacb;
 }
 
 .botoes {
@@ -101,30 +119,10 @@ input[type="number"] {
   justify-content: center;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 15px;
-  font-weight: bold;
-  background-color: #c7e9f9;
-  color: #ee6bf0;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #4FC3F7;
-}
-
-button:disabled {
-  background-color: #4fc3;
-}
-
 #saida,
 #listaFrutas {
-  background: #f0f0f0;
-  color: #000;
+  background: #eee;
+  color: #333;
   padding: 10px;
   border-radius: 6px;
   margin-top: 10px;
@@ -132,4 +130,20 @@ button:disabled {
   font-size: 16px;
 }
 
+.container__conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.container__informacoes {
+  flex: 1 1 300px;
+}
+
+.container__imagem-pessoa {
+  max-width: 300px;
+  border-radius: 10px;
+}
 
